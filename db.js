@@ -12,7 +12,6 @@ var state = {
 };
 
 exports.connect = function(mode, done) {
-
   state.pool = mysql.createPool(
     mode === exports.MODE_PROD ? config[prod] : config[test]
   );
@@ -21,6 +20,7 @@ exports.connect = function(mode, done) {
   done();
 };
 
+//provide with an active connection
 exports.get = function() {
   return state.pool;
 };
