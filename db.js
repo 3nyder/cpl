@@ -13,7 +13,7 @@ var state = {
 
 exports.connect = function(mode, done) {
   state.pool = mysql.createPool(
-    mode === exports.MODE_PROD ? config[prod] : config[test]
+    mode === exports.MODE_PROD ? config['prod'] : config['test']
   );
 
   state.mode = mode;
@@ -26,7 +26,7 @@ exports.get = function() {
 };
 
 //takes a JSON object and loads its data into the database
-exports.fixtures = function(data) {
+exports.fixtures = function(data, done) {
   var pool = state.pool;
   if (!pool) return done(new Error('Missing database connection.'));
 
