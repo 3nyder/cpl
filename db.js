@@ -21,8 +21,68 @@ exports.connect = function(mode, done) {
 };
 
 //provide with an active connection
-exports.get = function() {
-    return state.pool;
+exports.get = function(done) {
+    var pool = state.pool;
+    if (!pool) return done(new Error('Missing database connection.'));
+
+    done(null,pool);
+};
+
+exports.save = function(table, object, done) {
+    var pool = state.pool;
+    if (!pool) return done(new Error('Missing database connection.'));
+
+    var rows   = Object.keys(object);
+    var values = rows.map(function(key) {
+        return pool.escape(object[key]);
+    });
+
+    rows = rows.map(pool.escapeId);
+
+    pool.query('INSERT INTO ' + pool.escapeId(table) + ' (' + rows.join(',') + ') VALUES (' + values.join(',') + ')', function(err, result){
+        if (err) return done(err);
+        done(null, result.insertId);
+    });
+};
+
+exports.fetch = function(table, where_obj, done) {
+    var pool = state.pool;
+    if (!pool) return done(new Error('Missing database connection.'));
+
+    var fetch_query = 'SELECT * FROM ' + pool.escapeId(table);
+    if(Object.keys(where_obj).length > 0) {
+        var where_strings = [];
+        for(var row in where_obj) {
+            where_strings.push(pool.escapeId(row) + '=' + pool.escape(where_obj[row]));
+        }
+        fetch_query += ' WHERE ' + where_strings.join(' AND ');
+    }
+    pool.query(fetch_query, function (err, rows) {
+        if (err) return done(err);
+        done(null, rows);
+    });
+};
+
+exports.delete = function(table, where_obj, done) {
+    var pool = state.pool;
+    if (!pool) return done(new Error('Missing database connection.'));
+
+    var delete_query = "DELETE FROM `" + table + "`";
+
+    if(Object.keys(where_obj).length > 0) {
+        var where_strings = [];
+        for(var row in where_obj) {
+            where_strings.push(row + "='" + where_obj[row] + "'");
+        }
+        delete_query += " WHERE " + where_strings.join(' AND ');
+    } else {
+        return done(new Error('Trying to delete all, not allowed.'));
+    }
+
+    pool.query(delete_query, function (err, result) {
+        if (err) return done(err);
+        done(null, result.affectedRows);
+    });
 };
 
 //takes a JSON object and loads its data into the database
