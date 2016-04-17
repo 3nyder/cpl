@@ -27,6 +27,7 @@
   "homepage": "https://github.com/3nyder/cpl#readme",
   "dependencies": {
     "express": "^4.13.4",
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "mysql": "^2.10.2"
   }
 }
