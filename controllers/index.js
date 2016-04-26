@@ -3,10 +3,14 @@ var router  = express.Router();
 
 router.use('/courses', require('./course'));
 
-// router.get('/', function(req, res) {
-//   Comments.all(function(err, comments) {
-//     res.render('index', {comments: comments})
-//   })
-// })
+router.get('/login', function(req, res) {
+    //TODO user and password check
+
+    sess = req.session;
+
+    sess.authenticated = true;
+    res.end('done');
+
+});
 
 module.exports = router;

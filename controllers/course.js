@@ -2,9 +2,9 @@ var express = require('express');
 var router  = express.Router();
 var course  = require('../models/course');
 var types   = require('../helpers/types');
-//var auth    = require('../middlewares/auth');
+var auth    = require('../middlewares/auth');
 
-router.post('/', function(req, res) {
+router.post('/', auth, function(req, res) {
     course_name = req.body.course_name;
     description = req.body.description;
 
@@ -33,7 +33,7 @@ router.delete('/:id', function(req, res) {
     });
 });
 
-router.put('/:id', function(req, res) {
+router.put('/:id', auth, function(req, res) {
     var asked = {
         id: req.params.id,
         course_name: req.body.course_name,
