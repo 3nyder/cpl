@@ -12,7 +12,7 @@ app.use(require('./controllers'));
 
 
 // Connect to MySQL on start
-db.connect(db.MODE_PROD, function(err) {
+db.connect(db.MODE_TEST, function(err) {
     if (err) {
         console.log('Unable to connect to MySQL.');
         process.exit(1);
