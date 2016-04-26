@@ -5,4 +5,4 @@ Web App para administrar y llevar cursos en linea
 
 Web App to manage and take online courses
 
-*MySQL, NodeJs, Polymer*
+*MySQL, NodeJs, Material Design Lite, Jade*
