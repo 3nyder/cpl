@@ -1,6 +1,5 @@
 var express      = require('express');
 var session      = require('express-session');
-var FileStore    = require('session-file-store')(session);
 var app          = express();
 var db           = require('./db');
 var bodyParser   = require('body-parser');
@@ -12,8 +11,7 @@ app.use(session({
     name: 'server-session-cookie-id',
     secret: 'my express secret',
     saveUninitialized: true,
-    resave: true,
-    store: new FileStore()
+    resave: true
 }));
 
 app.use(function printSession(req, res, next) {
