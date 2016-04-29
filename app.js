@@ -14,12 +14,6 @@ app.use(session({
     resave: true
 }));
 
-app.use(function printSession(req, res, next) {
-  console.log('req.session', req.session);
-  return next();
-});
-
-//app.use(express.static(__dirname + '/public'))
 //app.use(require('./middlewares/users'))
 app.use(require('./controllers'));
 
