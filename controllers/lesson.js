@@ -1,35 +1,35 @@
 var express = require('express');
 var router  = express.Router();
-var course  = require('../models/course');
 var lesson  = require('../models/lesson');
 var types   = require('../helpers/types');
 var auth    = require('../middlewares/auth');
 
 router.post('/', auth, function(req, res) {
-    course_name = req.body.course_name;
+    lesson_name = req.body.lesson_name;
     description = req.body.description;
+    idcourse    = req.body.idcourse;
 
-    course.create(course_name, description, function(err, result) {
-        types.makeJSON(res, { idcourse: result });
+    lesson.create(lesson_name, description, idcourse, function(err, result) {
+        types.makeJSON(res, { idlesson: result });
     });
 });
 
 router.get('/', function(req, res) {
-    course.all(function (err, result) {
+    lesson.all(function (err, result) {
         types.makeJSON(res, result);
     });
 });
 
 router.get('/:id', function(req, res) {
     id = req.params.id;
-    course.get(id, function (err, result) {
+    lesson.get(id, function (err, result) {
         types.makeJSON(res, result);
     });
 });
 
 router.delete('/:id', auth, function(req, res) {
     id = req.params.id;
-    course.delete(id, function (err, result) {
+    lesson.delete(id, function (err, result) {
         types.makeJSON(res, result);
     });
 });
@@ -37,19 +37,12 @@ router.delete('/:id', auth, function(req, res) {
 router.put('/:id', auth, function(req, res) {
     var asked = {
         id: req.params.id,
-        course_name: req.body.course_name,
+        lesson_name: req.body.lesson_name,
         description: req.body.description
     };
 
     types.makeJSON(res, asked);
 
-});
-
-router.get('/:id/lessons', function(req, res) {
-    id = req.params.id;
-    lesson.getByCourse(id, function (err, result) {
-        types.makeJSON(res, result);
-    });
 });
 
 
