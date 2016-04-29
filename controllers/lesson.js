@@ -9,28 +9,28 @@ router.post('/', auth, function(req, res) {
     description = req.body.description;
     idcourse    = req.body.idcourse;
 
-    lesson.create(lesson_name, description, idcourse, function(err, comment) {
-        types.makeJSON(res, { idlesson: comment });
+    lesson.create(lesson_name, description, idcourse, function(err, result) {
+        types.makeJSON(res, { idlesson: result });
     });
 });
 
 router.get('/', function(req, res) {
-    lesson.all(function (err, comment) {
-        types.makeJSON(res, comment);
+    lesson.all(function (err, result) {
+        types.makeJSON(res, result);
     });
 });
 
 router.get('/:id', function(req, res) {
     id = req.params.id;
-    lesson.get(id, function (err, comment) {
-        types.makeJSON(res, comment);
+    lesson.get(id, function (err, result) {
+        types.makeJSON(res, result);
     });
 });
 
 router.delete('/:id', auth, function(req, res) {
     id = req.params.id;
-    lesson.delete(id, function (err, comment) {
-        types.makeJSON(res, comment);
+    lesson.delete(id, function (err, result) {
+        types.makeJSON(res, result);
     });
 });
 
