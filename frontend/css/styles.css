@@ -35,18 +35,18 @@ html, body {
 .mdl-layout__drawer .avatar {
   margin-bottom: 16px;
 }
-.demo-drawer {
+.cpl-drawer {
   border: none;
 }
 /* iOS Safari specific workaround */
-.demo-drawer .mdl-menu__container {
+.cpl-drawer .mdl-menu__container {
   z-index: -1;
 }
-.demo-drawer .demo-navigation {
+.cpl-drawer .cpl-navigation {
   z-index: -2;
 }
 /* END iOS Safari specific workaround */
-.demo-drawer .mdl-menu .mdl-menu__item {
+.cpl-drawer .mdl-menu .mdl-menu__item {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -54,7 +54,7 @@ html, body {
       -ms-flex-align: center;
           align-items: center;
 }
-.demo-drawer-header {
+.cpl-drawer-header {
   box-sizing: border-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -82,12 +82,12 @@ html, body {
   width: 100%;
 }
 
-.demo-navigation {
+.cpl-navigation {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-.demo-layout .demo-navigation .mdl-navigation__link {
+.demo-layout .cpl-navigation .mdl-navigation__link {
   display: -webkit-flex !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -100,11 +100,11 @@ html, body {
   color: rgba(255, 255, 255, 0.56);
   font-weight: 500;
 }
-.demo-layout .demo-navigation .mdl-navigation__link:hover {
+.demo-layout .cpl-navigation .mdl-navigation__link:hover {
   background-color: #00BCD4;
   color: #37474F;
 }
-.demo-navigation .mdl-navigation__link .material-icons {
+.cpl-navigation .mdl-navigation__link .material-icons {
   font-size: 24px;
   color: rgba(255, 255, 255, 0.56);
   margin-right: 32px;
@@ -220,4 +220,37 @@ _:-ms-input-placeholder, :root .demo-graph {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+
+.cpl-content {
+  max-width: 1080px;
+}
+
+.course-card.mdl-card {
+  width: 256px;
+  height: 256px;
+  background: #4DB6AC;
+}
+.course-card > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.course-card > .mdl-card__title {
+  align-items: flex-start;
+}
+.course-card > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.course-card > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.course-card > .mdl-card__actions > .material-icons {
+  padding-right: 10px;
+}
+.course-card > .mdl-card__title,
+.course-card > .mdl-card__actions,
+.course-card > .mdl-card__actions > .mdl-button {
+  color: #fff;
 }
