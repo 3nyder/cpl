@@ -5,6 +5,12 @@ $(function(){
     var $divCourses = $('#cpl-courses');
     var $nav = $('nav');
 
+    function closeCoursesDiv() {
+        if($('#cpl-courses').parent().hasClass('open')) {
+            $('#cpl-courses').siblings('.collapsible-title').click();
+        }
+    }
+
 
     $.getJSON(base+'/courses', function(data) {
         $divCourses.empty();
@@ -54,8 +60,18 @@ $(function(){
             $( "<ul/>", {
                 "class": "mdl-list",
                 html: lessons.join("")
-            }).appendTo(".cpl-content");
+            }).appendTo("#cpl-lesson");
 
+            closeCoursesDiv();
+
+        });
+    });
+
+
+    $('.collapsible-title').click(function(){
+        var $this = $(this);
+        $this.siblings('.collapsible-content').slideToggle('slow').promise().then(function(){
+            $this.parent().toggleClass('open');
         });
     });
 

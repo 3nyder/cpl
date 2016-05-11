@@ -223,10 +223,6 @@ _:-ms-input-placeholder, :root .demo-graph {
 }
 
 
-#cpl-courses {
-  max-width: 1080px;
-}
-
 .course-card.mdl-card {
   width: 256px;
   height: 256px;
@@ -253,4 +249,28 @@ _:-ms-input-placeholder, :root .demo-graph {
 .course-card > .mdl-card__actions,
 .course-card > .mdl-card__actions > .mdl-button {
   color: #fff;
+}
+
+
+.collapsible-section.open .material-icons.expand,
+.collapsible-section:not(.open) .material-icons.collapse {
+  display: none;
+}
+
+.collapsible-section:not(.open) .collapsible-content {
+  display: none;
+}
+
+.collapsible-section .collapsible-title {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.collapsible-section {
+  max-width: 1080px;
+  margin: 0 auto;
+  border-top: 1px solid #D8D8D8;
 }
