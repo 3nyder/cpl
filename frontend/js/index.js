@@ -2,7 +2,7 @@ var base = 'http://localhost:3000';
 
 $(function(){
 
-    var $divCourses = $('.cpl-courses');
+    var $divCourses = $('#cpl-courses');
     var $nav = $('nav');
 
 
