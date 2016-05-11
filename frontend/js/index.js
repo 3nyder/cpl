@@ -2,12 +2,12 @@ var base = 'http://localhost:3000';
 
 $(function(){
 
-    var $divContent = $('.cpl-content');
+    var $divCourses = $('.cpl-courses');
     var $nav = $('nav');
 
 
     $.getJSON(base+'/courses', function(data) {
-        $divContent.empty();
+        $divCourses.empty();
         $nav.empty();
 
         var cards = [];
@@ -33,7 +33,7 @@ $(function(){
             nLink.push('<a class="mdl-navigation__link" data-idcourse="'+elem.idcourse+'">'+elem.course+'</a>');
         }
 
-        $divContent.append(cards.join(""));
+        $divCourses.append(cards.join(""));
         $nav.append(nLink.join(""));
     });
 
