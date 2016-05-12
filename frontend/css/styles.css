@@ -285,3 +285,7 @@ _:-ms-input-placeholder, :root .demo-graph {
 .mdl-list__item-avatar, .mdl-list__item-avatar.material-icons {
   background-color: #D8D8D8;
 }
+
+.mdl-dialog {
+  width: 1080px;
+}

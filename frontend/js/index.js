@@ -56,7 +56,7 @@ $(function(){
                 var elem = data[i];
                 lessons.push('<li class="mdl-list__item mdl-list__item--three-line">');
                     lessons.push('<span class="mdl-list__item-primary-content">');
-                        if(elem.idlesson % 2 != 0) {
+                        if(elem.idlesson % 2 !== 0) {
                             lessons.push('<i class="material-icons mdl-list__item-avatar mdl-color-text--green-300">check</i>');
                         } else {
                             lessons.push('<i class="material-icons mdl-list__item-avatar mdl-color-text--red-300">close</i>');
@@ -87,6 +87,8 @@ $(function(){
 
     $('body').on('click', 'a.open-modal-question', function() {
         console.log('modal', $(this).data('idlesson'));
+        var dialog = document.querySelector('dialog');
+        dialog.showModal();
     });
 
 
