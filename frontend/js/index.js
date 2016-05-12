@@ -45,14 +45,30 @@ $(function(){
 
     $('body').on('click', '.course-card a', function() {
         var idcourse = $(this).data('idcourse');
+        var course_name = $(this).closest('.course-card').find('h4').text();
+        $('.course-title h5').text(course_name);
+        $('#cpl-selected-course').empty();
+
         $.getJSON(base+'/courses/'+idcourse+'/lessons', function(data) {
             var lessons = [];
 
             for (var i = 0; i < data.length; i++) {
                 var elem = data[i];
-                lessons.push('<li class="mdl-list__item">');
+                lessons.push('<li class="mdl-list__item mdl-list__item--three-line">');
                     lessons.push('<span class="mdl-list__item-primary-content">');
-                        lessons.push(elem.lesson);
+                        if(elem.idlesson % 2 != 0) {
+                            lessons.push('<i class="material-icons mdl-list__item-avatar mdl-color-text--green-300">check</i>');
+                        } else {
+                            lessons.push('<i class="material-icons mdl-list__item-avatar mdl-color-text--red-300">close</i>');
+                        }
+                        lessons.push('<span>'+elem.lesson+'</span>');
+                        lessons.push('<span class="mdl-list__item-text-body">'+elem.description+'</span>');
+                    lessons.push('</span>');
+                    lessons.push('<span class="mdl-list__item-secondary-content">');
+                        lessons.push('<a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">file_download</i></a>');
+                    lessons.push('</span>');
+                    lessons.push('<span class="mdl-list__item-secondary-content">');
+                        lessons.push('<a class="mdl-list__item-secondary-action open-modal-question" data-idlesson="'+elem.idlesson+'" href="#"><i class="material-icons">question_answer</i></a>');
                     lessons.push('</span>');
                 lessons.push('</li>');
             }
@@ -60,11 +76,17 @@ $(function(){
             $( "<ul/>", {
                 "class": "mdl-list",
                 html: lessons.join("")
-            }).appendTo("#cpl-lesson");
+            }).appendTo("#cpl-selected-course").promise().then(function(){
+                $('.course-grid').show('slow');
+            });
 
             closeCoursesDiv();
 
         });
+    });
+
+    $('body').on('click', 'a.open-modal-question', function() {
+        console.log('modal', $(this).data('idlesson'));
     });
 
 
@@ -72,6 +94,12 @@ $(function(){
         var $this = $(this);
         $this.siblings('.collapsible-content').slideToggle('slow').promise().then(function(){
             $this.parent().toggleClass('open');
+        });
+    });
+
+    $('.button-close').click(function(){
+        $(this).closest('.course-grid').slideUp('slow').promise().then(function() {
+            $('#cpl-courses').siblings('.collapsible-title').click();
         });
     });
 

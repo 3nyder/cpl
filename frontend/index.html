@@ -79,8 +79,20 @@
                 </h3>
                 <div id="cpl-courses" class="mdl-grid collapsible-content"></div>
             </div>
-
-            <div id="cpl-lesson"></div>
+            <div class="mdl-grid course-grid">
+                <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+                    <div class="course-title mdl-cell mdl-cell--12-col mdl-grid">
+                        <h5 class="mdl-cell mdl-cell--11-col"></h5>
+                        <div class="mdl-layout-spacer"></div>
+                        <button class="mdl-button mdl-js-button mdl-button--icon button-close">
+                            <i class="material-icons">close</i>
+                        </button>
+                    </div>
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <div id="cpl-selected-course"></div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
     <script src="js/material.min.js"></script>

@@ -222,6 +222,14 @@ _:-ms-input-placeholder, :root .demo-graph {
           align-items: center;
 }
 
+.course-grid {
+  max-width: 1080px;
+  display: none;
+}
+
+.course-grid .course-title {
+  border-bottom: 1px solid #D8D8D8;
+}
 
 .course-card.mdl-card {
   width: 256px;
@@ -272,5 +280,8 @@ _:-ms-input-placeholder, :root .demo-graph {
 .collapsible-section {
   max-width: 1080px;
   margin: 0 auto;
-  border-top: 1px solid #D8D8D8;
+}
+
+.mdl-list__item-avatar, .mdl-list__item-avatar.material-icons {
+  background-color: #D8D8D8;
 }
