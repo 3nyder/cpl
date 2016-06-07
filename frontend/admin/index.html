@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Web App para administrar y llevar cursos en linea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Cursos Para Llevar</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="img/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="img/ios-desktop.png">
+
+    <link rel="shortcut icon" href="../img/favicon.png">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../css/material.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Wide card with share menu button -->
+    <style>
+        .demo-card-wide.mdl-card {
+            width: 334px;
+            margin: 0 auto;
+        }
+        .demo-card-wide > .mdl-card__title {
+            color: #fff;
+            height: 176px;
+            background-color: #46B6AC;
+        }
+        .space {
+            height: 150px;
+        }
+        .login-button {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="space"></div>
+
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Bienvenido</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            <form action="courses.html">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="usuario">
+                    <label class="mdl-textfield__label" for="usuario">Usuario</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="password" id="contrasena">
+                    <label class="mdl-textfield__label" for="contrasena">Contraseña</label>
+                </div>
+            </form>
+            <small><a class="mdl-button--primary" href="#">¿Olvidó su contraseña?</a></small>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a href="courses.html" class="login-button mdl-button mdl-button--raised mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+                Iniciar Sesión
+            </a>
+        </div>
+    </div>
+
+    <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+    <script>
+        (function() {
+            'use strict';
+            window['counter'] = 0;
+            var snackbarContainer = document.querySelector('#demo-toast-example');
+            var showToastButton = document.querySelector('#demo-show-toast');
+            showToastButton.addEventListener('click', function() {
+                'use strict';
+                var data = {message: 'Example Message # ' + ++counter};
+                snackbarContainer.MaterialSnackbar.showSnackbar(data);
+            });
+        }());
+    </script>
+
+    <script src="../js/material.min.js"></script>
+    <script src="../js/jquery-2.2.3.min.js"></script>
+    <script src="../js/index.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('.login-button').click(function(){
+                if($('#usuario').val() != 'alg@ciencias.unam.mx' || $('#contrasena').val() != '1234') {
+                    var snackbarContainer = document.querySelector('#demo-toast-example');
+                    var data = {message: 'Usuario o contraseña incorrectos'};
+                    snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
