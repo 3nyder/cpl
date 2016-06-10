@@ -13,9 +13,9 @@ dialog.querySelector('.close').addEventListener('click', function() {
 var actionCell = function(id) {
     var html = [];
     html.push('<td>');
-        html.push('<button class="crud-edit mdl-button mdl-js-button mdl-button--icon" data-id="' + id + '">');
-            html.push('<i class="material-icons">edit</i>');
-        html.push('</button>');
+        // html.push('<button class="crud-edit mdl-button mdl-js-button mdl-button--icon" data-id="' + id + '">');
+        //     html.push('<i class="material-icons">edit</i>');
+        // html.push('</button>');
         html.push('<button class="crud-delete mdl-button mdl-js-button mdl-button--icon" data-id="' + id + '">');
             html.push('<i class="material-icons">delete</i>');
         html.push('</button>');
@@ -77,5 +77,20 @@ $(function(){
             });
         }
     });
+
+    if($('.external-select').length > 0) {
+        $('.external-select').each(function(){
+            $this = $(this);
+            var idKey   = $this.data('idkey');
+            var textKey = $this.data('textkey');
+            $.getJSON( config.api + $this.data('path'), function( data ) {
+                var items = [];
+                for (var i = 0; i < data.length; i++) {
+                    items.push( '<option value="'+data[i][idKey]+'">'+data[i][textKey]+'</option>' );
+                }
+                $this.append(items.join(''));
+            });
+        });
+    }
 
 });

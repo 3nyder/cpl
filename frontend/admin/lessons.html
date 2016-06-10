@@ -82,21 +82,18 @@ limitations under the License
     <dialog class="mdl-dialog">
         <h4 class="mdl-dialog__title">Agregar una nueva lección</h4>
         <div class="mdl-dialog__content">
-            <form>
+            <form class="crud-form">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="nombre_curso">
+                    <input class="mdl-textfield__input" type="text" id="nombre_curso" name="lesson_name">
                     <label class="mdl-textfield__label" for="nombre_curso">Nombre de la lección</label>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="odesc_curso">
+                    <input class="mdl-textfield__input" type="text" id="odesc_curso" name="description">
                     <label class="mdl-textfield__label" for="odesc_curso">Descripción de la lección</label>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <select name="" id="">
+                    <select class="external-select" name="idcourse" data-path="/courses" data-idkey="idcourse" data-textkey="course">
                         <option value="">Selecciona un curso</option>
-                        <option value="">Intro</option>
-                        <option value="">test</option>
-                        <option value="">esc'aped</option>
                     </select>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -106,7 +103,7 @@ limitations under the License
             </form>
         </div>
         <div class="mdl-dialog__actions">
-            <button type="button" class="mdl-button">Agregar</button>
+            <button type="button" class="button-add mdl-button">Agregar</button>
             <button type="button" class="mdl-button close">Cancelar</button>
         </div>
     </dialog>
