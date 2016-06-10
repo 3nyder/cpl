@@ -5,6 +5,7 @@ var user       = require('../models/user');
 var types      = require('../helpers/types');
 var saltRounds = 10;
 
+router.use('/lessons', require('./lesson'));
 router.use('/courses', require('./course'));
 
 router.post('/login', function(req, res) {

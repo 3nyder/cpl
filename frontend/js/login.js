@@ -22,6 +22,7 @@ $(function() {
             if('error' in data) {
                 snackbarContainer.MaterialSnackbar.showSnackbar({message: 'Usuario o contraseña incorrectos'});
             } else if('success' in data) {
+
                 document.location.href = 'courses.html';
             }
         });

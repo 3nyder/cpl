@@ -62,7 +62,7 @@ limitations under the License
         </div>
         <main class="mdl-layout__content mdl-color--grey-100">
             <div class="mdl-grid demo-content">
-                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                <table class="crud-table mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--12-col" data-path="/courses" data-pkey="idcourse">
                     <thead>
                         <tr>
                             <th class="mdl-data-table__cell--non-numeric">Curso</th>
@@ -70,50 +70,6 @@ limitations under the License
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Intro</td>
-                            <td class="mdl-data-table__cell--non-numeric">Introducción para curso básico</td>
-                            <td>
-                                <!-- Icon button -->
-                                <button class="mdl-button mdl-js-button mdl-button--icon">
-                                    <i class="material-icons">edit</i>
-                                </button>
-                                <!-- Icon button -->
-                                <button class="mdl-button mdl-js-button mdl-button--icon">
-                                    <i class="material-icons">delete</i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">test</td>
-                            <td class="mdl-data-table__cell--non-numeric">Curso de prueba</td>
-                            <td>
-                                <!-- Icon button -->
-                                <button class="mdl-button mdl-js-button mdl-button--icon">
-                                    <i class="material-icons">edit</i>
-                                </button>
-                                <!-- Icon button -->
-                                <button class="mdl-button mdl-js-button mdl-button--icon">
-                                    <i class="material-icons">delete</i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">esc'aped</td>
-                            <td class="mdl-data-table__cell--non-numeric">valu'es, oh&lt;yeah</td>
-                            <td>
-                                <!-- Icon button -->
-                                <button class="mdl-button mdl-js-button mdl-button--icon">
-                                    <i class="material-icons">edit</i>
-                                </button>
-                                <!-- Icon button -->
-                                <button class="mdl-button mdl-js-button mdl-button--icon">
-                                    <i class="material-icons">delete</i>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
                 </table>
             </div>
         </main>
@@ -125,19 +81,19 @@ limitations under the License
     <dialog class="mdl-dialog">
         <h4 class="mdl-dialog__title">Agregar un nuevo curso</h4>
         <div class="mdl-dialog__content">
-            <form action="courses.html">
+            <form class="crud-form">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="nombre_curso">
-                    <label class="mdl-textfield__label" for="nombre_curso">Nombre del curso</label>
+                    <input class="mdl-textfield__input" type="text" id="course_name" name="course_name">
+                    <label class="mdl-textfield__label" for="course_name">Nombre del curso</label>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="odesc_curso">
-                    <label class="mdl-textfield__label" for="odesc_curso">Descripción del curso</label>
+                    <input class="mdl-textfield__input" type="text" id="description" name="description">
+                    <label class="mdl-textfield__label" for="description">Descripción del curso</label>
                 </div>
             </form>
         </div>
         <div class="mdl-dialog__actions">
-            <button type="button" class="mdl-button">Agregar</button>
+            <button type="button" class="button-add mdl-button">Agregar</button>
             <button type="button" class="mdl-button close">Cancelar</button>
         </div>
     </dialog>

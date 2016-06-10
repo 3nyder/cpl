@@ -63,11 +63,11 @@ $(function(){
                         lessons.push('<span class="mdl-list__item-text-body">'+elem.description+'</span>');
                     lessons.push('</span>');
                     lessons.push('<span class="mdl-list__item-secondary-content">');
-                        lessons.push('<a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">file_download</i></a>');
+                        lessons.push('<a class="mdl-list__item-secondary-action" href="/docs/test.pdf" download><i class="material-icons">file_download</i></a>');
                     lessons.push('</span>');
-                    lessons.push('<span class="mdl-list__item-secondary-content">');
-                        lessons.push('<a class="mdl-list__item-secondary-action open-modal-question" data-idlesson="'+elem.idlesson+'" href="#"><i class="material-icons">live_help</i></a>');
-                    lessons.push('</span>');
+                    // lessons.push('<span class="mdl-list__item-secondary-content">');
+                    //     lessons.push('<a class="mdl-list__item-secondary-action open-modal-question" data-idlesson="'+elem.idlesson+'" href="#"><i class="material-icons">live_help</i></a>');
+                    // lessons.push('</span>');
                 lessons.push('</li>');
             }
 
