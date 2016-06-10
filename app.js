@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session({
-    name: 'server-session-cookie-id',
+    name: 'cpl-session',
     secret: 'my express secret',
     saveUninitialized: true,
     resave: true
