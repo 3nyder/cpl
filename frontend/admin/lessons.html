@@ -1,22 +1,22 @@
 <!doctype html>
 <!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
+Material Design Lite
+Copyright 2015 Google Inc. All rights reserved.
 
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-      https://www.apache.org/licenses/LICENSE-2.0
+https://www.apache.org/licenses/LICENSE-2.0
 
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License
 -->
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Web App para administrar y llevar cursos en linea">
@@ -40,209 +40,77 @@
     <link rel="stylesheet" href="../css/material.min.css">
     <link rel="stylesheet" href="styles.css">
 
-    <style>
-    #view-source {
-      position: fixed;
-      display: block;
-      right: 0;
-      bottom: 0;
-      margin-right: 40px;
-      margin-bottom: 40px;
-      z-index: 900;
-    }
-    </style>
 </head>
-  <body>
+<body>
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-      <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
-        <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Administrador</span>
-        </div>
-      </header>
-      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-        <header class="demo-drawer-header">
-          <i class="demo-avatar mdl-color-text--blue-grey-400 material-icons">person</i>
-          <div class="demo-avatar-dropdown">
-            <span>alg@ciencias.unam.mx</span>
-          </div>
+        <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Administrador</span>
+            </div>
         </header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href="courses.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Cursos</a>
-          <a class="mdl-navigation__link" href="lessons.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Lecciones</a>
-        </nav>
-      </div>
-      <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-grid demo-content">
-          <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--12-col">
-            <thead>
-              <tr>
-                <th class="mdl-data-table__cell--non-numeric">Leccion</th>
-                <th class="mdl-data-table__cell--non-numeric">Descripción</th>
-                <th class="mdl-data-table__cell--non-numeric">Curso</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-              <td class="mdl-data-table__cell--non-numeric">Bienvenida</td>
-              <td class="mdl-data-table__cell--non-numeric">Hola a los alumnos</td>
-              <td class="mdl-data-table__cell--non-numeric">Intro</td>
-              <td>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">edit</i>
-                </button>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">delete</i>
-                </button>
-              </td>
-              </tr>
-              <tr>
-              <td class="mdl-data-table__cell--non-numeric">Despedida</td>
-              <td class="mdl-data-table__cell--non-numeric">Felices vacaciones</td>
-              <td class="mdl-data-table__cell--non-numeric">Intro</td>
-              <td>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">edit</i>
-                </button>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">delete</i>
-                </button>
-              </td>
-              </tr>
-              <tr>
-              <td class="mdl-data-table__cell--non-numeric">Aenean leo</td>
-              <td class="mdl-data-table__cell--non-numeric">Fusce a quam. Vestibulum volutpat pretium libero.</td>
-              <td class="mdl-data-table__cell--non-numeric">test</td>
-              <td>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">edit</i>
-                </button>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">delete</i>
-                </button>
-              </td>
-              </tr>
-              <tr>
-              <td class="mdl-data-table__cell--non-numeric">Suspendisse nisl elit</td>
-              <td class="mdl-data-table__cell--non-numeric">Vivamus aliquet elit ac nisl.</td>
-              <td class="mdl-data-table__cell--non-numeric">test</td>
-              <td>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">edit</i>
-                </button>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">delete</i>
-                </button>
-              </td>
-              </tr>
-              <tr>
-              <td class="mdl-data-table__cell--non-numeric">Pellentesque dapibus hendrerit</td>
-              <td class="mdl-data-table__cell--non-numeric">Mauris sollicitudin fermentum libero</td>
-              <td class="mdl-data-table__cell--non-numeric">esc'aped</td>
-              <td>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">edit</i>
-                </button>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">delete</i>
-                </button>
-              </td>
-              </tr>
-              <tr>
-              <td class="mdl-data-table__cell--non-numeric">Proin magna</td>
-              <td class="mdl-data-table__cell--non-numeric">Praesent nonummy mi in odio.</td>
-              <td class="mdl-data-table__cell--non-numeric">esc'aped</td>
-              <td>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">edit</i>
-                </button>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">delete</i>
-                </button>
-              </td>
-              </tr>
-              <tr>
-              <td class="mdl-data-table__cell--non-numeric">Fusce risus</td>
-              <td class="mdl-data-table__cell--non-numeric">Vestibulum ante ipsum primis in faucibus orci luct...</td>
-              <td class="mdl-data-table__cell--non-numeric">esc'aped</td>
-              <td>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">edit</i>
-                </button>
-                <!-- Icon button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                  <i class="material-icons">delete</i>
-                </button>
-              </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+            <header class="demo-drawer-header">
+                <i class="demo-avatar mdl-color-text--blue-grey-400 material-icons">person</i>
+                <div class="demo-avatar-dropdown">
+                    <span>alg@ciencias.unam.mx</span>
+                </div>
+            </header>
+            <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+                <a class="mdl-navigation__link" href="courses.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Cursos</a>
+                <a class="mdl-navigation__link" href="lessons.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Lecciones</a>
+            </nav>
         </div>
-      </main>
+        <main class="mdl-layout__content mdl-color--grey-100">
+            <div class="mdl-grid demo-content">
+                <table class="crud-table mdl-data-table mdl-js-data-table mdl-shadow--2dp mdl-cell mdl-cell--12-col" data-path="/lessons" data-pkey="idlesson">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric">Leccion</th>
+                            <th class="mdl-data-table__cell--non-numeric">Descripción</th>
+                            <th class="mdl-data-table__cell--non-numeric">Curso</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </main>
     </div>
-    <button id="view-source" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-      <i class="material-icons">add</i>
+    <button class="admin-add-fab mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">add</i>
     </button>
 
     <dialog class="mdl-dialog">
-      <h4 class="mdl-dialog__title">Agregar una nueva lección</h4>
-      <div class="mdl-dialog__content">
-        <form action="courses.html">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="nombre_curso">
-                <label class="mdl-textfield__label" for="nombre_curso">Nombre de la lección</label>
-            </div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="odesc_curso">
-                <label class="mdl-textfield__label" for="odesc_curso">Descripción de la lección</label>
-            </div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <select name="" id="">
-                  <option value="">Selecciona un curso</option>
-                  <option value="">Intro</option>
-                  <option value="">test</option>
-                  <option value="">esc'aped</option>
-                </select>
-            </div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="file" id="odesc_curso">
-                <label class="mdl-textfield__label" for="odesc_curso">Archivo</label>
-            </div>
-        </form>
-      </div>
-      <div class="mdl-dialog__actions">
-        <button type="button" class="mdl-button">Agregar</button>
-        <button type="button" class="mdl-button close">Cancelar</button>
-      </div>
+        <h4 class="mdl-dialog__title">Agregar una nueva lección</h4>
+        <div class="mdl-dialog__content">
+            <form class="crud-form">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="nombre_curso" name="lesson_name">
+                    <label class="mdl-textfield__label" for="nombre_curso">Nombre de la lección</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="odesc_curso" name="description">
+                    <label class="mdl-textfield__label" for="odesc_curso">Descripción de la lección</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <select class="external-select" name="idcourse" data-path="/courses" data-idkey="idcourse" data-textkey="course">
+                        <option value="">Selecciona un curso</option>
+                    </select>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="file" id="odesc_curso">
+                    <label class="mdl-textfield__label" for="odesc_curso">Archivo</label>
+                </div>
+            </form>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="button-add mdl-button">Agregar</button>
+            <button type="button" class="mdl-button close">Cancelar</button>
+        </div>
     </dialog>
 
-    <script src="../js/material.min.js"></script>
-    <script src="../js/jquery-2.2.3.min.js"></script>
-    <script>
-      var dialog = document.querySelector('dialog');
-      var showDialogButton = document.querySelector('#view-source');
-      if (! dialog.showModal) {
-        dialogPolyfill.registerDialog(dialog);
-      }
-      showDialogButton.addEventListener('click', function() {
-        dialog.showModal();
-      });
-      dialog.querySelector('.close').addEventListener('click', function() {
-        dialog.close();
-      });
-    </script>
-  </body>
+    <script type="application/javascript" src="../js/client-config.js"></script>
+    <script type="application/javascript" src="../js/material.min.js"></script>
+    <script type="application/javascript" src="../js/jquery-2.2.3.min.js"></script>
+    <script type="application/javascript" src="../js/admin.js"></script>
+</body>
 </html>
