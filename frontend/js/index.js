@@ -1,5 +1,3 @@
-var base = 'http://localhost:3000';
-
 $(function(){
 
     var $divCourses = $('#cpl-courses');
@@ -12,7 +10,7 @@ $(function(){
     }
 
 
-    $.getJSON(base+'/courses', function(data) {
+    $.getJSON(config.api + '/courses', function(data) {
         $divCourses.empty();
         $nav.empty();
 
@@ -49,7 +47,7 @@ $(function(){
         $('.course-title h5').text(course_name);
         $('#cpl-selected-course').empty();
 
-        $.getJSON(base+'/courses/'+idcourse+'/lessons', function(data) {
+        $.getJSON(config.api + '/courses/'+idcourse+'/lessons', function(data) {
             var lessons = [];
 
             for (var i = 0; i < data.length; i++) {
@@ -86,7 +84,6 @@ $(function(){
     });
 
     $('body').on('click', 'a.open-modal-question', function() {
-        console.log('modal', $(this).data('idlesson'));
         var dialog = document.querySelector('dialog');
         dialog.showModal();
     });
