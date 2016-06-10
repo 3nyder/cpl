@@ -51,58 +51,32 @@
             <h2 class="mdl-card__title-text">Bienvenido</h2>
         </div>
         <div class="mdl-card__supporting-text">
-            <form action="courses.html">
+            <form id="form-login" action="/api/login" method="POST">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="usuario">
+                    <input class="mdl-textfield__input" type="text" id="usuario" name="u">
                     <label class="mdl-textfield__label" for="usuario">Usuario</label>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="password" id="contrasena">
+                    <input class="mdl-textfield__input" type="password" id="contrasena" name="p">
                     <label class="mdl-textfield__label" for="contrasena">Contraseña</label>
                 </div>
             </form>
-            <small><a class="mdl-button--primary" href="#">¿Olvidó su contraseña?</a></small>
         </div>
         <div class="mdl-card__actions mdl-card--border">
-            <a href="courses.html" class="login-button mdl-button mdl-button--raised mdl-button--accent mdl-js-button mdl-js-ripple-effect">
+            <button class="login-button mdl-button mdl-button--raised mdl-button--accent mdl-js-button mdl-js-ripple-effect">
                 Iniciar Sesión
-            </a>
+            </button>
         </div>
     </div>
 
-    <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+    <div id="login-toast" class="mdl-js-snackbar mdl-snackbar">
         <div class="mdl-snackbar__text"></div>
         <button class="mdl-snackbar__action" type="button"></button>
     </div>
-    <script>
-        (function() {
-            'use strict';
-            window['counter'] = 0;
-            var snackbarContainer = document.querySelector('#demo-toast-example');
-            var showToastButton = document.querySelector('#demo-show-toast');
-            showToastButton.addEventListener('click', function() {
-                'use strict';
-                var data = {message: 'Example Message # ' + ++counter};
-                snackbarContainer.MaterialSnackbar.showSnackbar(data);
-            });
-        }());
-    </script>
 
-    <script src="../js/material.min.js"></script>
-    <script src="../js/jquery-2.2.3.min.js"></script>
-    <script src="../js/index.js"></script>
-
-    <script type="text/javascript">
-        $(function() {
-            $('.login-button').click(function(){
-                if($('#usuario').val() != 'alg@ciencias.unam.mx' || $('#contrasena').val() != '1234') {
-                    var snackbarContainer = document.querySelector('#demo-toast-example');
-                    var data = {message: 'Usuario o contraseña incorrectos'};
-                    snackbarContainer.MaterialSnackbar.showSnackbar(data);
-                    return false;
-                }
-            });
-        });
-    </script>
+    <script type="text/javascript" src="../js/client_config.js"></script>
+    <script type="text/javascript" src="../js/material.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
 </body>
 </html>
