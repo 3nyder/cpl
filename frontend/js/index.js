@@ -69,6 +69,36 @@ $(function(){
                     //     lessons.push('<a class="mdl-list__item-secondary-action open-modal-question" data-idlesson="'+elem.idlesson+'" href="#"><i class="material-icons">live_help</i></a>');
                     // lessons.push('</span>');
                 lessons.push('</li>');
+                lessons.push('<li class="mdl-list__item mdl-list__item--three-line">');
+                    lessons.push('<span class="mdl-list__item-primary-content">');
+                        lessons.push('<span>Allowing us to collect data will let us get you the information you want faster.</span>');
+                        lessons.push('<span class="mdl-list__item-text-body">'+`
+                            <div class="mdl-cell mdl-cell--12-col mdl-grid">
+                                <label class="mdl-cell mdl-cell--3-col mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                                    <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1">
+                                    <span class="mdl-radio__label">Uno</span>
+                                </label>
+                                <label class="mdl-cell mdl-cell--3-col mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                                    <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+                                    <span class="mdl-radio__label">Dos</span>
+                                </label>
+                                <label class="mdl-cell mdl-cell--3-col mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                                    <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3">
+                                    <span class="mdl-radio__label">Tres</span>
+                                </label>
+                                <label class="mdl-cell mdl-cell--3-col mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+                                    <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="4">
+                                    <span class="mdl-radio__label">Cuatro</span>
+                                </label>
+                            </div>
+                            `+'</span>');
+                    lessons.push('</span>');
+                lessons.push('</li>');
+                lessons.push(`
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <button class="mdl-button mdl-button--raised mdl-button--accent mdl-js-button mdl-js-ripple-effect">Enviar</button>
+                    </div>
+                    `);
             }
 
             $( "<ul/>", {
