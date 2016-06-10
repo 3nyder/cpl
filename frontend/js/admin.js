@@ -31,9 +31,10 @@ var regularCell = function(text) {
 $(function(){
     var servicePath = $('.crud-table').data('path');
     var primaryKey  = $('.crud-table').data('pkey');
-    var tbody       = [];
-    var loadTable = function(){
+    var loadTable  = function(){
         $.get(config.api + servicePath, function(rows) {
+            var tbody = [];
+            $('.crud-table tbody').remove();
             for (var i = 0; i < rows.length; i++) {
                 row = rows[i];
                 tbody.push('<tr>');
@@ -52,12 +53,29 @@ $(function(){
     loadTable();
 
     $('.button-add').click(function(){
-        $.post(config.api + servicePath, $('.crud-table').serialize(), function(data) {
+        $.post(config.api + servicePath, $('.crud-form').serialize(), function(data) {
             if(primaryKey in data) {
-                console.log('exito');
+                if(dialog.open) { dialog.close(); }
+                console.log('reg agregado');
                 loadTable();
             }
         });
+    });
+
+    $('body').on('click', '.crud-delete', function(){
+        id = $(this).data('id');
+        if(confirm('¿Está seguro que desea borrar el registro?')) {
+            $.ajax({
+                url: config.api + servicePath + '/' + id,
+                type: 'DELETE',
+                success: function(data) {
+                    if(data == 1) {
+                        console.log('borrado');
+                        loadTable();
+                    }
+                }
+            });
+        }
     });
 
 });
